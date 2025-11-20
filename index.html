@@ -59,6 +59,14 @@
       line-height: 2.2rem;
     }
 
+    /* 制作物一覧見出しフェードイン */
+    #projects h2 {
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1.6s ease forwards;
+      animation-delay: 1s;
+    }
+
     /* 制作物カード */
     .cards-container {
       display: flex;
@@ -168,10 +176,10 @@
   </section>
 
   <section id="projects">
-    <h2 style="text-align:center;">制作物一覧</h2>
+    <h2>制作物一覧</h2>
     <div class="cards-container">
 
-      <a class="card" href="https://toti-hub.github.io/portfolio/python_project.html" target="_blank" rel="noopener noreferrer">
+      <a class="card" href="python_project.html">
         <h3>音声解析プログラム</h3><br>
         <p>Pythonで音声ファイルの解析プログラムを製作。</p>
       </a>
