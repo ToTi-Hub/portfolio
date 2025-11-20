@@ -7,39 +7,41 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-Rp7H1nIX+E0l+aXgT2jWZ7uVQy05fYK8kSbVJKmTjF3qQ6ymuODkZWpL2JfE0d8xB2XkFq2UeYz5X4iFlwzOBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* --- 基本スタイル --- */
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Noto Sans JP', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #ffffff;
+            color: #222222;
         }
 
         header {
-            background-color: #4CAF50;
-            color: white;
             text-align: center;
-            padding: 1rem 0;
+            padding: 30px 10px;
+            background-color: #222222;
+            color: white;
         }
 
         main {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
 
         .card {
-            background-color: white;
+            background-color: #f9f9f9;
             padding: 1.5rem;
             margin-bottom: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
         .card h3 {
             margin-top: 0;
         }
 
+        /* --- スクリーンショット --- */
         .screenshots {
             display: flex;
             flex-wrap: wrap;
@@ -49,39 +51,38 @@
         }
 
         .screenshots img {
-            flex: 1 1 calc(33% - 1rem);
-            max-width: 100%;
+            width: 280px; /* 小さめサイズ */
             height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .screenshots img:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
         }
 
-        /* リンク強調 */
+        /* --- Colabリンクボタン --- */
         .highlight-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background-color: #4CAF50;
+            background-color: #222222; /* 白黒基調に合わせて黒 */
             color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 10px;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1rem;
             transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
 
         .highlight-link:hover {
-            background-color: #45a049;
+            background-color: #555555;
             transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
         }
 
         a {
@@ -91,19 +92,19 @@
         footer {
             text-align: center;
             padding: 1rem 0;
-            background-color: #222;
+            background-color: #222222;
             color: white;
         }
 
         @media (max-width: 800px) {
             .screenshots img {
-                flex: 1 1 calc(50% - 1rem);
+                width: 45%;
             }
         }
 
         @media (max-width: 500px) {
             .screenshots img {
-                flex: 1 1 100%;
+                width: 100%;
             }
         }
     </style>
@@ -121,10 +122,7 @@
             <p>
                 <strong>リンク:</strong> 
                 <a href="https://colab.research.google.com/drive/1XODbiTikiVByLq2CvhP_V9nPHIiOrnr5?usp=sharing" target="_blank" rel="noopener noreferrer" class="highlight-link">
-                    <i class="fas fa-laptop-code"></i> Colab
-                </a>
-                <a href="https://github.com/yourusername/yourrepo" target="_blank" rel="noopener noreferrer" class="highlight-link" style="margin-left: 1rem;">
-                    <i class="fab fa-github"></i> GitHub
+                    <i class="fas fa-laptop-code"></i> Google Colabで開く
                 </a>
             </p>
             <p>
