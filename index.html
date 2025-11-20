@@ -7,8 +7,65 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    /* Profile セクション中央寄せ */
+    #profile {
+      text-align: center;
+      margin: 60px auto;
+      max-width: 800px;
+      opacity: 0;
+      animation: fadeIn 1.6s ease forwards;
+    }
+
+    #profile h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    #profile p {
+      font-size: 1.3rem;
+      line-height: 2.2rem;
+    }
+
+    /* 制作物カード（表示されない問題の改善） */
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+      opacity: 0;
+      animation: fadeIn 1.6s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    .card {
+      width: 260px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      text-decoration: none;
+      color: #000;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
@@ -19,21 +76,40 @@
 
 <main>
 
-  <!-- ▼▼ Profile セクションを追加 ▼▼ -->
   <section id="profile">
     <h2>Profile</h2>
     <p>
       大阪府立高専 情報コース2年の結石敏矢です。<br>
-      興味のある分野は **プログラミング・Web開発・ゲーム制作**。<br>
-      趣味は **音楽（すりぃ / ボカロ）・ゲーム・動画編集**。<br>
+      興味のある分野は <b>プログラミング・Web開発・ゲーム制作</b>。<br>
+      趣味は <b>音楽（すりぃ / ボカロ）・ゲーム・動画編集</b>。<br>
       PythonやHTML/CSSを中心に制作活動を行っています。
     </p>
   </section>
-  <!-- ▲▲ 追加ここまで ▲▲ -->
 
   <section id="projects">
-    <h2>制作物一覧</h2>
+    <h2 style="text-align:center;">制作物一覧</h2>
     <div class="cards-container">
 
-      <!-- Python課題カード -->
-      <a href=
+      <!-- Python課題カード例 -->
+      <a class="card" href="#">
+        <h3>Python 音声解析</h3>
+        <p>波形・スペクトログラム・BPM推定などを行った課題</p>
+      </a>
+
+      <a class="card" href="#">
+        <h3>Webサイト制作</h3>
+        <p>HTML/CSSを使ったレスポンシブサイト</p>
+      </a>
+
+      <a class="card" href="#">
+        <h3>ゲーム制作</h3>
+        <p>Pythonでのシンプルなゲーム開発</p>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
