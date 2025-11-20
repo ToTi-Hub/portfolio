@@ -1,41 +1,46 @@
-<div class="card">
-    <h3>「Juppyter」</h3>
-    
-    <!-- ダウンロードボタン -->
-    <p>
-        <strong>ダウンロード:</strong><br>
-        <a href="downloads/Juppyter.zip" class="highlight-link" download>
-            <i class="fas fa-file-archive"></i> ZIPファイルをダウンロード
-        </a>
-    </p>
-
-    <p>
-        <strong>概要:</strong><br>
-        「Juppyter」は、チーム変数の逆襲が送る迫り来る敵を殲滅する2Dシューティングゲームです。<br>
-        このゲームには敵を撃破するとアルファベットがドロップし、<br>
-        そのアルファベットを集めて英単語を作ることで特別な効果を得られるという独自要素があります。<br>
-        かなりの高難易度であり、玄人にこそお勧めしたい作品となっています。
-    </p>
-
-    <p>
-        <strong>役割・担当:</strong><br>
-        アイデア発案・テストプレイ・備品準備
-    </p>
-
-    <h4>スクリーンショット / 成果物</h4>
-    <div class="screenshots">
-        <img src="images/fes_ss1.png" alt="Juppyterプレイ画像1">
-        <img src="images/fes_ss2.png" alt="Juppyterプレイ画像2">
-        <img src="images/fes_ss3.png" alt="Juppyterプレイ画像3">
-    </div>
-</div>
-
-<!-- Lightbox -->
-<div id="lightbox">
-    <img src="" alt="拡大画像">
-</div>
-
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高専祭プロジェクト「Juppyter」</title>
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-Rp7H1nIX+E0l+aXgT2jWZ7uVQy05fYK8kSbVJKmTjF3qQ6ymuODkZWpL2JfE0d8xB2XkFq2UeYz5X4iFlwzOBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
+/* --- 基本スタイル --- */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #222222;
+}
+
+header {
+    text-align: center;
+    padding: 30px 10px;
+    background-color: #222222;
+    color: white;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
 /* --- ダウンロードボタン --- */
 .highlight-link {
     display: inline-flex;
@@ -72,7 +77,7 @@
 }
 
 .screenshots img {
-    width: 280px; /* 小さめ表示 */
+    width: 280px;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
@@ -83,6 +88,32 @@
 .screenshots img:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* --- トップページに戻るボタン --- */
+.back-button {
+    display: inline-block;
+    background-color: #222222;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.back-button:hover {
+    background-color: #555555;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #222222;
+    color: white;
 }
 
 /* --- Lightbox --- */
@@ -106,7 +137,7 @@
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-/* レスポンシブ */
+/* --- レスポンシブ --- */
 @media (max-width: 800px) {
     .screenshots img {
         width: 45%;
@@ -119,6 +150,58 @@
     }
 }
 </style>
+</head>
+<body>
+
+<header>
+    <h1>高専祭プロジェクト＠変数の逆襲</h1>
+</header>
+
+<main>
+    <section id="juppyter">
+        <div class="card">
+            <h3>「Juppyter」</h3>
+
+            <p>
+                <strong>ダウンロード:</strong><br>
+                <a href="downloads/Juppyter.zip" class="highlight-link" download>
+                    <i class="fas fa-file-archive"></i> ZIPファイルをダウンロード
+                </a>
+            </p>
+
+            <p>
+                <strong>概要:</strong><br>
+                「Juppyter」は、チーム変数の逆襲が送る迫り来る敵を殲滅する2Dシューティングゲームです。<br>
+                このゲームには敵を撃破するとアルファベットがドロップし、<br>
+                そのアルファベットを集めて英単語を作ることで特別な効果を得られるという独自要素があります。<br>
+                かなりの高難易度であり、玄人にこそお勧めしたい作品となっています。
+            </p>
+
+            <p>
+                <strong>役割・担当:</strong><br>
+                アイデア発案・テストプレイ・備品準備
+            </p>
+
+            <h4>スクリーンショット / 成果物</h4>
+            <div class="screenshots">
+                <img src="images/fes_ss1.png" alt="Juppyterプレイ画像1">
+                <img src="images/fes_ss2.png" alt="Juppyterプレイ画像2">
+                <img src="images/fes_ss3.png" alt="Juppyterプレイ画像3">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="card" style="text-align:center;">
+            <a href="index.html" class="back-button">← トップページに戻る</a>
+        </div>
+    </section>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox">
+    <img src="" alt="拡大画像">
+</div>
 
 <script>
 // Lightbox機能
@@ -138,3 +221,10 @@ lightbox.addEventListener('click', () => {
     lightbox.style.display = 'none';
 });
 </script>
+
+<footer>
+    <p>&copy; 2025 結石敏矢</p>
+</footer>
+
+</body>
+</html>
