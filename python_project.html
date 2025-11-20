@@ -4,7 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>音声解析プログラム</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background-color: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .screenshots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .screenshots img {
+            flex: 1 1 calc(33% - 1rem);
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .screenshots img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #222;
+            color: white;
+        }
+
+        @media (max-width: 800px) {
+            .screenshots img {
+                flex: 1 1 calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .screenshots img {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -25,12 +107,14 @@
             <p>
                 <strong>概要:</strong><br>
                 このプログラムは、アップロードした音声ファイルを解析して可視化するためのツールです。
-アップロードされた音声データを基に、波形やスペクトログラムを表示し、曲のテンポ（BPM）を推定できます。
+                アップロードされた音声データを基に、波形やスペクトログラムを表示し、曲のテンポ（BPM）を推定できます。
             </p>
             <h4>スクリーンショット</h4>
-            <img src="images/py_ss1.png" alt="音声の波形解析">
-            <img src="images/py_ss2.png" alt="音声のスペクトログラム解析">
-            <img src="images/py_ss3.png" alt="音声のBPM推定">
+            <div class="screenshots">
+                <img src="images/py_ss1.png" alt="音声の波形解析">
+                <img src="images/py_ss2.png" alt="音声のスペクトログラム解析">
+                <img src="images/py_ss3.png" alt="音声のBPM推定">
+            </div>
         </div>
     </section>
 
