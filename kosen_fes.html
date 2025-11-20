@@ -18,6 +18,7 @@
         <strong>役割・担当:</strong><br>
         アイデア発案・テストプレイ・備品準備
     </p>
+
     <h4>スクリーンショット / 成果物</h4>
     <div class="screenshots">
         <img src="images/fes_ss1.png" alt="Juppyterプレイ画像1">
@@ -26,7 +27,13 @@
     </div>
 </div>
 
+<!-- Lightbox -->
+<div id="lightbox">
+    <img src="" alt="拡大画像">
+</div>
+
 <style>
+/* ボタン */
 .highlight-link {
     display: inline-flex;
     align-items: center;
@@ -51,4 +58,80 @@
 .highlight-link i {
     font-size: 1.1rem;
 }
+
+/* --- スクリーンショット --- */
+.screenshots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.screenshots img {
+    width: 280px; /* 小さめ表示 */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.screenshots img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* --- Lightbox --- */
+#lightbox {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* レスポンシブ */
+@media (max-width: 800px) {
+    .screenshots img {
+        width: 45%;
+    }
+}
+
+@media (max-width: 500px) {
+    .screenshots img {
+        width: 100%;
+    }
+}
 </style>
+
+<script>
+// Lightbox機能
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const images = document.querySelectorAll('.screenshots img');
+
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+    });
+});
+
+lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+</script>
