@@ -14,13 +14,13 @@
       font-family: 'Noto Sans JP', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #ffffff; /* 元の白背景に戻す */
+      background-color: #ffffff;
     }
 
     header {
       text-align: center;
       padding: 30px 10px;
-      background-color: #222222; /* 元のテーマカラー */
+      background-color: #222222;
       color: white;
     }
 
@@ -121,6 +121,31 @@
         font-size: 1.1rem;
       }
     }
+
+    /* 経歴セクション */
+    #experience {
+      max-width: 800px;
+      margin: 60px auto;
+      text-align: left;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border-radius: 12px;
+      opacity: 0;
+      animation: fadeIn 1.6s ease forwards;
+      animation-delay: 1.6s;
+    }
+
+    #experience h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    #experience ul {
+      list-style: disc inside;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
   </style>
 </head>
 <body>
@@ -146,19 +171,45 @@
     <h2 style="text-align:center;">制作物一覧</h2>
     <div class="cards-container">
 
-      <!-- 音声解析カード -->
-      <a class="card" href="python_project.html">
+      <a class="card" href="https://toti-hub.github.io/portfolio/python_project.html" target="_blank" rel="noopener noreferrer">
         <h3>音声解析プログラム</h3>
         <p>Pythonで音声ファイルの解析プログラムを製作。</p>
       </a>
 
-      <!-- 高専祭プロジェクトカード -->
       <a class="card" href="kosen_fes.html">
         <h3>高専祭プロジェクト</h3>
         <p>2Dシューティングゲーム「Juppyter」</p>
       </a>
 
     </div>
+  </section>
+
+  <section id="experience">
+    <h2>使用経験・経歴</h2>
+    <p>プログラミング言語（授業レベルで使用経験あり）:</p>
+    <ul>
+      <li>Python言語</li>
+      <li>Arduino言語</li>
+      <li>Scratch</li>
+    </ul>
+    <p>ソフトウェア・ウェブサービス（全員利用）:</p>
+    <ul>
+      <li>Git / GitHub</li>
+      <li>VSCode (venvによるPython開発)</li>
+      <li>ArduinoIDE</li>
+      <li>Deeds-DCS</li>
+      <li>MakeCode for micro:bit</li>
+      <li>Tinkercad</li>
+      <li>WSL (Windows Subsystem for Linux)</li>
+    </ul>
+    <p>その他、実験班によって使用:</p>
+    <ul>
+      <li>Ambient</li>
+      <li>Real VNC</li>
+      <li>Tera Term</li>
+      <li>Wireshark</li>
+      <li>Cisco Packet Tracer</li>
+    </ul>
   </section>
 
 </main>
