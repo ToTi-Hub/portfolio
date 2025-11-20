@@ -1,34 +1,32 @@
-/* style.css の例 */
-
 body {
-    font-family: Arial, sans-serif; /* 読みやすいフォントに */
-    line-height: 1.6; /* 行間を空ける */
-    background-color: #f4f4f4; /* 背景を薄いグレーに */
-    color: #333; /* 文字色を濃いグレーに */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #333; /* ヘッダーの背景色 */
-    color: #fff; /* ヘッダーの文字色 */
+    background-color: #333;
+    color: #fff;
     padding: 1rem;
     text-align: center;
 }
 
 main {
-    width: 90%; /* メインコンテンツの幅 */
-    max-width: 960px; /* 幅の上限 */
-    margin: 2rem auto; /* 中央揃え */
+    width: 90%;
+    max-width: 960px;
+    margin: 2rem auto;
     padding: 1rem;
-    background-color: #fff; /* メインコンテンツの背景を白に */
-    border-radius: 8px; /* 角を丸くする */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影をつける */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 section {
-    margin-bottom: 2rem; /* 各セクションの下に余白 */
-    border-bottom: 1px solid #ddd; /* セクションの区切り線 */
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
     padding-bottom: 1rem;
 }
 
@@ -43,25 +41,25 @@ h3 {
 }
 
 a {
-    color: #007BFF; /* リンクの色 */
-    text-decoration: none; /* 下線を消す */
+    color: #007BFF;
+    text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline; /* ホバー時に下線をつける */
+    text-decoration: underline;
 }
 
 ul {
-    list-style-type: disc; /* ビュレットポイント */
+    list-style-type: disc;
     padding-left: 20px;
 }
 
 img {
-    max-width: 100%; /* 画像がはみ出ないように */
+    max-width: 100%;
     height: auto;
     margin: 0.5rem;
-    border: 1px solid #ddd; /* 画像に枠線 */
-    border-radius: 4px; /* 画像の角を丸く */
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 footer {
@@ -72,7 +70,14 @@ footer {
     margin-top: 2rem;
 }
 
-/* スマートフォン対応 (簡易) */
+.card {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
 @media (max-width: 600px) {
     main {
         width: 100%;
@@ -82,6 +87,6 @@ footer {
     }
 
     img {
-        width: 90%; /* スマホでは画像を大きく */
+        width: 90%;
     }
 }
