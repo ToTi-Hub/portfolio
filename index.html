@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>結石敏矢のポートフォリオ</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>結石敏矢のポートフォリオ</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>結石敏矢のポートフォリオ</h1>
-    <p>高専2年生 (17歳)</p>
+  <h1>結石敏矢のポートフォリオ</h1>
+  <p>高専2年生 (17歳)</p>
 </header>
 
 <main>
-    <section id="profile">
-        <h2>自己紹介</h2>
-        <div class="card">
-            <p>〇〇高専に在籍。プログラミングや電子工作に興味があります。</p>
-            <p>Python・Arduino・Scratchの経験があります。</p>
+  <section id="projects">
+    <h2>制作物一覧</h2>
+    <div class="cards-container">
+      <!-- Python課題カード -->
+      <a href="python_project.html" class="project-card">
+        <img src="images/py_ss1.png" alt="Python課題プレビュー">
+        <div class="card-info">
+          <h3>課題05: Pythonプログラム</h3>
+          <p>Pythonでデータ分析やアルゴリズム課題を作成。</p>
         </div>
-    </section>
+      </a>
 
-    <section id="links">
-        <h2>ポートフォリオリンク</h2>
-        <div class="card">
-            <p><a href="python_project.html">課題05: Pythonプログラム</a></p>
-            <p><a href="kosen_fes.html">高専祭プロジェクト</a></p>
+      <!-- 高専祭プロジェクトカード -->
+      <a href="kosen_fes.html" class="project-card">
+        <img src="images/fes_ss1.png" alt="高専祭プロジェクトプレビュー">
+        <div class="card-info">
+          <h3>高専祭プロジェクト</h3>
+          <p>IoTデバイスやArduinoを用いた展示作品。</p>
         </div>
-    </section>
+      </a>
+    </div>
+  </section>
 </main>
 
 <footer>
-    <p>&copy; 2025 結石敏矢</p>
+  <p>&copy; 2025 結石敏矢</p>
 </footer>
 
 </body>
