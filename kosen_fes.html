@@ -1,12 +1,117 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高専祭プロジェクト＠変数の逆襲<br>
-「Juppyter」
-    </title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高専祭プロジェクト＠変数の逆襲「Juppyter」</title>
+<style>
+/* --- 基本スタイル --- */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #222222;
+}
+
+header {
+    text-align: center;
+    padding: 30px 10px;
+    background-color: #222222;
+    color: white;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* --- スクリーンショット --- */
+.screenshots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.screenshots img {
+    width: 280px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.screenshots img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+a {
+    text-decoration: none;
+    color: #222222;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #222222;
+    color: white;
+}
+
+/* --- レスポンシブ --- */
+@media (max-width: 800px) {
+    .screenshots img {
+        width: 45%;
+    }
+}
+
+@media (max-width: 500px) {
+    .screenshots img {
+        width: 100%;
+    }
+}
+
+/* --- Lightbox --- */
+#lightbox {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+</style>
 </head>
 <body>
 
@@ -17,11 +122,12 @@
 <main>
     <section id="kosen-fes">
         <div class="card">
-            <h3>プロジェクトタイトル</h3>
+            <h3>「Juppyter」</h3>
             <p>
                 <strong>概要:</strong><br>
                 「Juppyter」は、チーム変数の逆襲が送る迫り来る敵を殲滅する2Dシューティングゲームです。<br>
-                このゲームには敵を撃破するとアルファベットがドロップし、そのアルファベットを集めて英単語を作ることで特別な効果を得られるという独自要素があります。<br>
+                このゲームには敵を撃破するとアルファベットがドロップし、<br>
+                そのアルファベットを集めて英単語を作ることで特別な効果を得られるという独自要素があります。<br>
                 かなりの高難易度であり、玄人にこそお勧めしたい作品となっています。
             </p>
             <p>
@@ -29,9 +135,11 @@
                 アイデア発案・テストプレイ・備品準備
             </p>
             <h4>スクリーンショット / 成果物</h4>
-            <img src="images/fes_ss1.png" alt="Juppyterプレイ画像1">
-            <img src="images/fes_ss2.png" alt="Juppyterプレイ画像2">
-            <img src="images/fes_ss3.png" alt="Juppyterプレイ画像3">
+            <div class="screenshots">
+                <img src="images/fes_ss1.png" alt="Juppyterプレイ画像1">
+                <img src="images/fes_ss2.png" alt="Juppyterプレイ画像2">
+                <img src="images/fes_ss3.png" alt="Juppyterプレイ画像3">
+            </div>
         </div>
     </section>
 
@@ -41,6 +149,30 @@
         </div>
     </section>
 </main>
+
+<!-- Lightbox -->
+<div id="lightbox">
+    <img src="" alt="拡大画像">
+</div>
+
+<script>
+// Lightbox機能
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const images = document.querySelectorAll('.screenshots img');
+
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+    });
+});
+
+lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+</script>
 
 <footer>
     <p>&copy; 2025 結石敏矢</p>
