@@ -1,217 +1,127 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>結石敏矢のポートフォリオ</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: 'Noto Sans JP', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-    }
+/* 共通フェードインアニメーション */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    header {
-      text-align: center;
-      padding: 30px 10px;
-      background-color: #222222;
-      color: white;
-    }
+/* Profile セクション */
+#profile {
+  text-align: center;
+  margin: 60px auto;
+  max-width: 800px;
+  opacity: 0;
+  animation: fadeIn 1.6s ease forwards;
+  animation-delay: 0.4s; /* 最初に表示 */
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
+#profile h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
 
-    header p {
-      margin: 5px 0 0 0;
-    }
+#profile p {
+  font-size: 1.3rem;
+  line-height: 2.2rem;
+}
 
-    main {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+/* 制作物一覧見出し */
+#projects h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeIn 1.6s ease forwards;
+  animation-delay: 0.8s; /* Profileの後に表示 */
+}
 
-    /* Profile セクション中央寄せ */
-    #profile {
-      text-align: center;
-      margin: 60px auto;
-      max-width: 800px;
-      opacity: 0;
-      animation: fadeIn 1.6s ease forwards;
-    }
+/* 制作物カード */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+  opacity: 0;
+  animation: fadeIn 1.6s ease forwards;
+  animation-delay: 1.2s; /* 見出しの後に表示 */
+}
 
-    #profile h2 {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
+.card {
+  width: 260px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: #000;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    #profile p {
-      font-size: 1.3rem;
-      line-height: 2.2rem;
-    }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
 
-    /* 制作物カード */
-    .cards-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 40px;
-      opacity: 0;
-      animation: fadeIn 1.6s ease forwards;
-      animation-delay: 1.2s;
-    }
+.card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
 
-    .card {
-      width: 260px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      text-decoration: none;
-      color: #000;
-      padding: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
+/* 経歴セクション */
+#experience {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: left;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  opacity: 0;
+  animation: fadeIn 1.6s ease forwards;
+  animation-delay: 1.6s; /* カードの後に表示 */
+}
 
-    .card h3 {
-      margin-top: 0;
-      font-size: 1.4rem;
-    }
+#experience h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
 
-    .card p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
+#experience ul {
+  list-style: disc inside;
+  font-size: 1rem;
+  line-height: 1.8;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    /* スマホ対応 */
-    @media (max-width: 600px) {
-      .cards-container {
-        flex-direction: column;
-        align-items: center;
-      }
+  .card {
+    width: 90%;
+  }
 
-      .card {
-        width: 90%;
-      }
+  #profile h2 {
+    font-size: 2rem;
+  }
 
-      #profile h2 {
-        font-size: 2rem;
-      }
+  #profile p {
+    font-size: 1.1rem;
+  }
 
-      #profile p {
-        font-size: 1.1rem;
-      }
-    }
+  #projects h2 {
+    font-size: 1.8rem;
+  }
 
-    /* 経歴セクション */
-    #experience {
-      max-width: 800px;
-      margin: 60px auto;
-      text-align: left;
-      padding: 20px;
-      background-color: #f0f0f0;
-      border-radius: 12px;
-      opacity: 0;
-      animation: fadeIn 1.6s ease forwards;
-      animation-delay: 1.6s;
-    }
-
-    #experience h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    #experience ul {
-      list-style: disc inside;
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>結石敏矢のポートフォリオ</h1>
-  <p>大阪高専2年 Iコース｜17歳</p>
-</header>
-
-<main>
-
-  <section id="profile">
-    <h2>Profile</h2>
-    <p>
-      大阪府立高専 情報コース2年の結石敏矢です。<br>
-      専門的に学習している分野は <b>プログラミング・Web開発 etc...</b>。<br>
-      趣味は <b>音楽</b>や<b>ゲーム</b>。<br>
-      最近は<b>ブロスタ・モンスト</b>をよく遊んでおり、<br>
-      好きなアーティストは<b>King Gnu</b>です。
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2 style="text-align:center;">制作物一覧</h2>
-    <div class="cards-container">
-
-      <a class="card" href="https://toti-hub.github.io/portfolio/python_project.html" target="_blank" rel="noopener noreferrer">
-        <h3>音声解析プログラム</h3><br>
-        <p>Pythonで音声ファイルの解析プログラムを製作。</p>
-      </a>
-
-      <a class="card" href="kosen_fes.html">
-        <h3>高専祭プロジェクト＠変数の逆襲</h3>
-        <p>2Dシューティングゲーム「Juppyter」</p>
-      </a>
-
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2>使用経験・経歴</h2>
-    <p>プログラミング言語（授業レベルで使用経験あり）</p>
-    <ul>
-      <li>Python言語</li>
-      <li>Arduino言語</li>
-      <li>Scratch</li>
-    </ul>
-    <p>ソフトウェア・ウェブサービス</p>
-    <ul>
-      <li>Git / GitHub</li>
-      <li>VSCode (venvによるPython開発)</li>
-      <li>ArduinoIDE</li>
-      <li>Deeds-DCS</li>
-      <li>MakeCode for micro:bit</li>
-      <li>Tinkercad</li>
-      <li>WSL (Windows Subsystem for Linux)</li>
-    </ul>
-    <p>実験班によって使用</p>
-    <ul>
-      <li>Tera Term</li>
-      <li>Wireshark</li>
-      <li>Cisco Packet Tracer</li>
-    </ul>
-  </section>
-
-</main>
-
-</body>
-</html>
+  #experience h2 {
+    font-size: 1.8rem;
+  }
+}
