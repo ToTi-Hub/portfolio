@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>音声解析プログラム</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-Rp7H1nIX+E0l+aXgT2jWZ7uVQy05fYK8kSbVJKmTjF3qQ6ymuODkZWpL2JfE0d8xB2XkFq2UeYz5X4iFlwzOBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
@@ -43,6 +45,7 @@
             flex-wrap: wrap;
             gap: 1rem;
             justify-content: center;
+            margin-top: 1rem;
         }
 
         .screenshots img {
@@ -59,13 +62,30 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
-        a {
-            color: #4CAF50;
+        /* リンク強調 */
+        .highlight-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
             text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        a:hover {
-            text-decoration: underline;
+        .highlight-link:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        a {
+            text-decoration: none;
         }
 
         footer {
@@ -100,8 +120,11 @@
             <h3>音声解析プログラム</h3>
             <p>
                 <strong>リンク:</strong> 
-                <a href="https://colab.research.google.com/drive/1XODbiTikiVByLq2CvhP_V9nPHIiOrnr5?usp=sharing" target="_blank" rel="noopener noreferrer">
-                    Google Colab / GitHub
+                <a href="https://colab.research.google.com/drive/1XODbiTikiVByLq2CvhP_V9nPHIiOrnr5?usp=sharing" target="_blank" rel="noopener noreferrer" class="highlight-link">
+                    <i class="fas fa-laptop-code"></i> Colab
+                </a>
+                <a href="https://github.com/yourusername/yourrepo" target="_blank" rel="noopener noreferrer" class="highlight-link" style="margin-left: 1rem;">
+                    <i class="fab fa-github"></i> GitHub
                 </a>
             </p>
             <p>
