@@ -1,0 +1,87 @@
+/* style.css の例 */
+
+body {
+    font-family: Arial, sans-serif; /* 読みやすいフォントに */
+    line-height: 1.6; /* 行間を空ける */
+    background-color: #f4f4f4; /* 背景を薄いグレーに */
+    color: #333; /* 文字色を濃いグレーに */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333; /* ヘッダーの背景色 */
+    color: #fff; /* ヘッダーの文字色 */
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    width: 90%; /* メインコンテンツの幅 */
+    max-width: 960px; /* 幅の上限 */
+    margin: 2rem auto; /* 中央揃え */
+    padding: 1rem;
+    background-color: #fff; /* メインコンテンツの背景を白に */
+    border-radius: 8px; /* 角を丸くする */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影をつける */
+}
+
+section {
+    margin-bottom: 2rem; /* 各セクションの下に余白 */
+    border-bottom: 1px solid #ddd; /* セクションの区切り線 */
+    padding-bottom: 1rem;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    color: #555;
+}
+
+a {
+    color: #007BFF; /* リンクの色 */
+    text-decoration: none; /* 下線を消す */
+}
+
+a:hover {
+    text-decoration: underline; /* ホバー時に下線をつける */
+}
+
+ul {
+    list-style-type: disc; /* ビュレットポイント */
+    padding-left: 20px;
+}
+
+img {
+    max-width: 100%; /* 画像がはみ出ないように */
+    height: auto;
+    margin: 0.5rem;
+    border: 1px solid #ddd; /* 画像に枠線 */
+    border-radius: 4px; /* 画像の角を丸く */
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+/* スマートフォン対応 (簡易) */
+@media (max-width: 600px) {
+    main {
+        width: 100%;
+        margin: 1rem 0;
+        padding: 0.5rem;
+        border-radius: 0;
+    }
+
+    img {
+        width: 90%; /* スマホでは画像を大きく */
+    }
+}
