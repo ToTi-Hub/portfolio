@@ -121,17 +121,46 @@
   <section class="card">
     <h2>スクリーンショット</h2>
     <div class="screenshots">
-      <img src="images/house_1.png" alt="スクリーンショット1">
-      <img src="images/house_2.png" alt="スクリーンショット2">
-      <img src="images/house_3.png" alt="スクリーンショット3">
+      <img src="images/house1.png" alt="スクリーンショット1">
+      <img src="images/house2.png" alt="スクリーンショット2">
+      <img src="images/house3.png" alt="スクリーンショット3">
     </div>
   </section>
 
-  <div class="back">
-    <a href="index.html">← トップページに戻る</a>
-  </div>
-
+    <section>
+        <div class="card" style="text-align:center;">
+            <a href="index.html" class="back-button">← トップページに戻る</a>
+        </div>
+    </section>
 </main>
+
+<!-- Lightbox -->
+<div id="lightbox">
+    <img src="" alt="拡大画像">
+</div>
+
+<script>
+// Lightbox機能
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const images = document.querySelectorAll('.screenshots img');
+
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+    });
+});
+
+lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+</script>
+
+<footer>
+    <p>&copy; 2025 結石敏矢</p>
+</footer>
 
 </body>
 </html>
