@@ -1,86 +1,150 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>家計簿アプリ | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家計簿アプリ | Portfolio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <style>
-    body {
-      font-family: 'Noto Sans JP', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-      color: #222;
-    }
+<style>
+/* --- 基本スタイル（kosenfes統一） --- */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #222222;
+}
 
-    header {
-      text-align: center;
-      padding: 30px 10px;
-      background-color: #222222;
-      color: white;
-    }
+header {
+  text-align: center;
+  padding: 30px 10px;
+  background-color: #222222;
+  color: white;
+}
 
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
 
-    .card {
-      background-color: #f9f9f9;
-      padding: 25px;
-      margin-bottom: 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    }
+.card {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
 
-    h2 {
-      margin-top: 0;
-    }
+.card h2 {
+  margin-top: 0;
+}
 
-    .screenshots {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 20px;
-    }
+/* --- ボタン --- */
+.highlight-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #222222;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
 
-    .screenshots img {
-      width: 260px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
+.highlight-link:hover {
+  background-color: #555555;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
 
-    .github-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 16px;
-      background-color: #222;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
+/* --- スクリーンショット --- */
+.screenshots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
 
-    .github-link:hover {
-      background-color: #555;
-    }
+.screenshots img {
+  width: 280px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    .back {
-      text-align: center;
-      margin-top: 40px;
-    }
+.screenshots img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
 
-    .back a {
-      text-decoration: none;
-      font-weight: bold;
-      color: #222;
-    }
-  </style>
+/* --- 戻るボタン --- */
+.back-button {
+  display: inline-block;
+  background-color: #222222;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.back-button:hover {
+  background-color: #555555;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* --- Lightbox --- */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* --- レスポンシブ --- */
+@media (max-width: 800px) {
+  .screenshots img {
+    width: 45%;
+  }
+}
+
+@media (max-width: 500px) {
+  .screenshots img {
+    width: 100%;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #222222;
+  color: white;
+}
+</style>
 </head>
 
 <body>
@@ -96,15 +160,11 @@
     <h2>概要</h2>
     <p>
       Python学習の集大成として制作した家計簿アプリです。<br>
-      日々の支出を「日付・カテゴリ・内容・金額」で記録し、
-      一覧表示やカテゴリ別のグラフ分析を行うことができます。
-    </p>
-    <p>
-      クラス設計・ファイル分割を意識し、保守性の高い構成を目指しました。
+      日々の支出を記録し、一覧表示やカテゴリ別分析を行えます。
     </p>
 
-    <a class="github-link" href="https://github.com/ToTi-Hub/household_account_app.git" target="_blank">
-      GitHubでソースコードを見る
+    <a class="highlight-link" href="https://github.com/ToTi-Hub/household_account_app.git" target="_blank">
+      <i class="fab fa-github"></i> GitHubでソースコードを見る
     </a>
   </section>
 
@@ -121,45 +181,40 @@
   <section class="card">
     <h2>スクリーンショット</h2>
     <div class="screenshots">
-      <img src="images/house1.png" alt="スクリーンショット1">
-      <img src="images/house2.png" alt="スクリーンショット2">
-      <img src="images/house3.png" alt="スクリーンショット3">
+      <img src="images/house1.png" alt="家計簿アプリ画面1">
+      <img src="images/house2.png" alt="家計簿アプリ画面2">
+      <img src="images/house3.png" alt="家計簿アプリ画面3">
     </div>
   </section>
 
-    <section>
-        <div class="card" style="text-align:center;">
-            <a href="index.html" class="back-button">← トップページに戻る</a>
-        </div>
-    </section>
-</main>
+  <section>
+    <div class="card" style="text-align:center;">
+      <a href="index.html" class="back-button">← トップページに戻る</a>
+    </div>
+  </section>
 
-<!-- Lightbox -->
-<div id="lightbox">
-    <img src="" alt="拡大画像">
+</main>
 </div>
 
 <script>
-// Lightbox機能
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('img');
 const images = document.querySelectorAll('.screenshots img');
 
 images.forEach(img => {
-    img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-    });
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = img.src;
+  });
 });
 
 lightbox.addEventListener('click', () => {
-    lightbox.style.display = 'none';
+  lightbox.style.display = 'none';
 });
 </script>
 
 <footer>
-    <p>&copy; 2025 結石敏矢</p>
+  <p>&copy; 2025 結石敏矢</p>
 </footer>
 
 </body>
